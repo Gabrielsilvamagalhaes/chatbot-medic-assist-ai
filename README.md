@@ -2,6 +2,19 @@
 
 Esta pasta organiza a proposta do **Medic Assist AI** em arquivos Markdown separados por topico, para facilitar consulta, manutencao e uso no projeto.
 
+
+---
+
+## Integrantes
+
+| Nome                | RA          |
+|---------------------|-------------|
+| Gabriel Silva       | 1272313274  |
+| Hanspeter Dietiker  | 1272313332  |
+
+
+---
+
 ## Topicos
 
 1. [Visao geral](01-visao-geral.md)
