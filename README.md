@@ -29,6 +29,7 @@ Esta pasta organiza a proposta do **Medic Assist AI** em arquivos Markdown separ
 10. [Arquitetura proposta](docs/10-arquitetura-proposta.md)
 11. [Entregas e resultados esperados](docs/11-entregas-resultados.md)
 12. [Backlog Desenvolvimento](docs/12-backlog-desenvolvimento.md)
+13. [Documento A3](docs/13-trabalho-a3.md)
 
 ## Descricao curta
 
