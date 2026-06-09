@@ -1,0 +1,64 @@
+{
+  "Gender": {
+    "Female": 0,
+    "Male": 1
+  },
+  "Readmission": {
+    "No": 0,
+    "Yes": 1
+  },
+  "Outcome": {
+    "Stable": 0,
+    "Recovered": 1
+  },
+  "nivel_urgencia": {
+    "baixa": 0,
+    "prioritario": 1,
+    "emergencia": 2
+  },
+  "Condition": {
+    "Allergic Reaction": 0,
+    "Appendicitis": 1,
+    "Cancer": 2,
+    "Childbirth": 3,
+    "Diabetes": 4,
+    "Fractured Arm": 5,
+    "Fractured Leg": 6,
+    "Heart Attack": 7,
+    "Heart Disease": 8,
+    "Hypertension": 9,
+    "Kidney Stones": 10,
+    "Osteoarthritis": 11,
+    "Prostate Cancer": 12,
+    "Respiratory Infection": 13,
+    "Stroke": 14
+  },
+  "Procedure": {
+    "Angioplasty": 0,
+    "Antibiotics and Rest": 1,
+    "Appendectomy": 2,
+    "CT Scan and Medication": 3,
+    "Cardiac Catheterization": 4,
+    "Cast and Physical Therapy": 5,
+    "Delivery and Postnatal Care": 6,
+    "Epinephrine Injection": 7,
+    "Insulin Therapy": 8,
+    "Lithotripsy": 9,
+    "Medication and Counseling": 10,
+    "Physical Therapy and Pain Management": 11,
+    "Radiation Therapy": 12,
+    "Surgery and Chemotherapy": 13,
+    "X-Ray and Splint": 14
+  },
+  "area_recomendada": {
+    "Cardiologia / Pronto-Socorro": 0,
+    "Cirurgia / Pronto-Socorro": 1,
+    "Clínica Médica": 2,
+    "Clínica Médica / Endocrinologia": 3,
+    "Clínica Médica / Pneumologia": 4,
+    "Neurologia / Pronto-Socorro": 5,
+    "Obstetrícia / Pronto-Socorro": 6,
+    "Oncologia / Clínica Médica": 7,
+    "Ortopedia / Pronto Atendimento": 8
+  }
+}
