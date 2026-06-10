@@ -58,13 +58,20 @@ python --version
 ## Instalação
 
 ```bash
+# 1. Baixa o código do repositório
 git clone git@github.com:hanspeterdietiker/chatbot-medic-assist-ai.git
-cd intelligence-ia-a3
 
+# 2. Entra na pasta do projeto que acabou de ser criada 
+cd chatbot-medic-assist-ai
+
+# 3. Cria o ambiente virtual
 python -m venv venv
-venv\Scripts\activate        # Windows
-# source venv/bin/activate   # Linux/macOS
 
+# 4. Ativa o ambiente virtual
+venv\Scripts\activate        # Se estiver usando Windows
+# source venv/bin/activate   # Se estiver usando Linux/macOS
+
+# 5. Instala as dependências listadas no projeto
 pip install -r requirements.txt
 ```
 
@@ -131,12 +138,12 @@ pytest tests/ -v
 
 ## Documentação
 
-| Documento | Conteúdo |
+| Documentos Principais | Conteúdo |
 | --------- | -------- |
 | [docs/01-visao-geral.md](docs/01-visao-geral.md) | Visão geral do projeto |
 | [docs/14-resultados-finais.md](docs/14-resultados-finais.md) | Métricas e conclusões |
 | [docs/12-backlog-desenvolvimento.md](docs/12-backlog-desenvolvimento.md) | Backlog com status das tarefas |
-| [poster/CONTEUDO_POSTER.md](poster/CONTEUDO_POSTER.md) | Conteúdo do poster A3 |
+| [poster/CONTEUDO_POSTER.md](poster/poster.md) | Conteúdo do poster A3 |
 
 ---
 
