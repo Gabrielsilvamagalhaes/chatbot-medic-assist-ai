@@ -58,7 +58,7 @@ python --version
 ## Instalação
 
 ```bash
-git clone https://github.com/seu-usuario/intelligence-ia-a3.git
+git clone git@github.com:hanspeterdietiker/chatbot-medic-assist-ai.git
 cd intelligence-ia-a3
 
 python -m venv venv
