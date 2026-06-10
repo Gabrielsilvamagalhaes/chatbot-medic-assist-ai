@@ -30,14 +30,14 @@ Este backlog organiza as atividades do projeto **Medic Assist AI**. A divisao co
 
 | ID | Tarefa | Prioridade | Status | Criterio de aceite |
 | --- | --- | --- | --- | --- |
-| B15 | Treinar modelo com Arvore de Decisao | Alta | Pendente | Modelo treinado gera predicoes para area e urgencia. |
-| B16 | Treinar modelo com Random Forest | Media | Pendente | Resultado pode ser comparado com Arvore de Decisao. |
-| B17 | Avaliar modelo com acuracia | Alta | Pendente | Acuracia foi calculada para as saidas previstas. |
-| B18 | Gerar matriz de confusao | Alta | Pendente | Matriz de confusao foi produzida para analise do modelo. |
-| B19 | Gerar relatorio de classificacao | Media | Pendente | Precisao, recall e F1-score foram registrados. |
-| B20 | Salvar modelo treinado | Alta | Pendente | Modelo final esta salvo em `models` ou pasta equivalente. |
-| B21 | Integrar chatbot ao modelo treinado | Alta | Pendente | Chatbot envia dados ao modelo e recebe previsao. |
-| B22 | Exibir resposta segura ao paciente | Alta | Pendente | Resposta mostra area recomendada e nivel de urgencia sem diagnosticar. |
+| B15 | Treinar modelo com Arvore de Decisao | Alta | Feito | Modelo treinado gera predicoes para area e urgencia. |
+| B16 | Treinar modelo com Random Forest | Media | Feito | Resultado pode ser comparado com Arvore de Decisao. |
+| B17 | Avaliar modelo com acuracia | Alta | Feito | Acuracia foi calculada para as saidas previstas. |
+| B18 | Gerar matriz de confusao | Alta | Feito | Matriz de confusao foi produzida para analise do modelo. |
+| B19 | Gerar relatorio de classificacao | Media | Feito | Precisao, recall e F1-score foram registrados. |
+| B20 | Salvar modelo treinado | Alta | Feito | Modelo final esta salvo em `models` ou pasta equivalente. |
+| B21 | Integrar chatbot ao modelo treinado | Alta | Feito | Chatbot envia dados ao modelo e recebe previsao. |
+| B22 | Exibir resposta segura ao paciente | Alta | Feito | Resposta mostra area recomendada e nivel de urgencia sem diagnosticar. |
 
 ## Sprint 4 - Validacao, entrega e apresentacao
 

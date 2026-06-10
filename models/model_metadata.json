@@ -1,0 +1,26 @@
+{
+  "feature_columns": [
+    "Age",
+    "Gender",
+    "Condition"
+  ],
+  "target_columns": [
+    "area_recomendada",
+    "nivel_urgencia"
+  ],
+  "random_state": 42,
+  "best_algorithm": "decision_tree",
+  "comparison": {
+    "decision_tree": {
+      "area_recomendada": 1.0,
+      "nivel_urgencia": 1.0,
+      "media": 1.0
+    },
+    "random_forest": {
+      "area_recomendada": 1.0,
+      "nivel_urgencia": 1.0,
+      "media": 1.0
+    }
+  },
+  "encoding_maps_file": "encoding_maps.json"
+}

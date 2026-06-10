@@ -1,4 +1,14 @@
-from .messages import BOAS_VINDAS, ENCERRAMENTO, AVISO_EMERGENCIA, AVISO_RESULTADO
+from .messages import (
+    BOAS_VINDAS,
+    ENCERRAMENTO,
+    AVISO_EMERGENCIA,
+    AVISO_RESULTADO,
+    MENSAGEM_ANALISANDO,
+    ORIENTACAO_URGENCIA,
+    FONTE_MODELO_IA,
+    FONTE_REGRAS_SEGURANCA,
+    FONTE_REGRAS_FALLBACK,
+)
 
 CONDITIONS = [
     "Dor no Coração/Dor no Peito/ Heart Disease / Chest Pain",
@@ -95,29 +105,62 @@ def collect_patient_data() -> dict:
     }
 
 
-def display_result(patient_data: dict, recommended_area: str, urgency_level: str) -> None:
-    """Print the triage result with safety disclaimers."""
+def _format_source_label(source: str) -> str:
+    """Converte código interno da fonte em texto amigável para o paciente."""
+    if source.startswith("modelo_ia"):
+        return f"{FONTE_MODELO_IA} ({source.split('(')[1].rstrip(')')})" if "(" in source else FONTE_MODELO_IA
+    if source == "regras_seguranca":
+        return FONTE_REGRAS_SEGURANCA
+    return FONTE_REGRAS_FALLBACK
+
+
+def display_result(
+    patient_data: dict,
+    recommended_area: str,
+    urgency_level: str,
+    source: str = "regras_fallback",
+) -> None:
+    """Exibe resultado da triagem com disclaimers de segurança e orientação clara (B22)."""
     print(AVISO_RESULTADO)
-    print("RESUMO DA TRIAGEM INICIAL")
-    print(f"  Idade              : {patient_data['age']} anos")
-    print(f"  Gênero             : {patient_data['gender']}")
-    print(f"  Condição principal : {patient_data['primary_condition']}")
-    print(f"  Duração sintomas   : {patient_data['symptom_duration_days']} dia(s)")
+
+    print("=" * 60)
+    print("  SUA TRIAGEM — RESUMO")
+    print("=" * 60)
+
+    print("\n  Dados informados:")
+    print(f"    Idade              : {patient_data['age']} anos")
+    print(f"    Gênero             : {patient_data['gender']}")
+    print(f"    Condição principal : {patient_data['primary_condition']}")
+    print(f"    Duração sintomas   : {patient_data['symptom_duration_days']} dia(s)")
     if patient_data["has_chronic_disease"]:
-        print(f"  Doença crônica     : {patient_data['chronic_detail']}")
+        print(f"    Doença crônica     : {patient_data['chronic_detail']}")
 
-    print()
-    print(f"  ➜  Área sugerida    : {recommended_area}")
-    print(f"  ➜  Nível de urgência: {urgency_level.upper()}")
+    urgency_key = urgency_level.lower()
+    urgency_label = urgency_key.upper()
 
-    if urgency_level.lower() == "emergencia":
+    print("\n  Recomendação:")
+    print(f"    Área sugerida      : {recommended_area}")
+    print(f"    Nível de urgência  : {urgency_label}")
+    print(f"    Origem             : {_format_source_label(source)}")
+
+    orientacao = ORIENTACAO_URGENCIA.get(urgency_key, "")
+    if orientacao:
+        print(f"\n  O que fazer agora:")
+        print(f"    {orientacao}")
+
+    if urgency_key == "emergencia":
         print(AVISO_EMERGENCIA)
 
     print(ENCERRAMENTO)
 
 
-def build_triage_summary(patient_data: dict, recommended_area: str, urgency_level: str) -> dict:
-    """Return a structured dict for human triage review."""
+def build_triage_summary(
+    patient_data: dict,
+    recommended_area: str,
+    urgency_level: str,
+    source: str = "regras_fallback",
+) -> dict:
+    """Retorna dict estruturado para revisão humana da triagem."""
     return {
         "patient": {
             "age": patient_data["age"],
@@ -135,6 +178,7 @@ def build_triage_summary(patient_data: dict, recommended_area: str, urgency_leve
             "area_recomendada": recommended_area,
             "nivel_urgencia": urgency_level,
         },
+        "prediction_source": source,
         "disclaimer": (
             "Triagem gerada automaticamente pelo Medic Assist AI. "
             "Não representa diagnóstico. Validação clínica obrigatória."

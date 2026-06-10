@@ -57,3 +57,30 @@ um diagnóstico médico e NÃO deve substituir a avaliação de
 um profissional de saúde.
 ------------------------------------------------------------
 """
+
+# Feedback exibido entre a coleta de dados e a exibição do resultado (B22)
+MENSAGEM_ANALISANDO = """
+⏳  Analisando suas informações com o modelo de IA...
+    Por favor, aguarde um momento.
+"""
+
+# Orientação de ação por nível de urgência — linguagem acessível, sem diagnóstico
+ORIENTACAO_URGENCIA: dict[str, str] = {
+    "baixa": (
+        "Você pode agendar uma consulta ou procurar atendimento "
+        "ambulatorial. Não é necessário ir ao pronto-socorro neste momento."
+    ),
+    "prioritario": (
+        "Procure atendimento presencial em breve. "
+        "Considere ir a uma unidade de saúde ou pronto atendimento hoje."
+    ),
+    "emergencia": (
+        "Sua condição pode exigir atendimento imediato. "
+        "Dirija-se ao pronto-socorro ou ligue 192 (SAMU)."
+    ),
+}
+
+# Rótulos amigáveis para exibição da fonte da recomendação
+FONTE_MODELO_IA = "Sugestão gerada pelo modelo de IA"
+FONTE_REGRAS_SEGURANCA = "Avaliação por regras de segurança (emergência detectada)"
+FONTE_REGRAS_FALLBACK = "Sugestão por regras clínicas (modelo não disponível)"
